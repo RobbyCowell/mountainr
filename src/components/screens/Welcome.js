@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PapaParse from 'papaparse';
 import papaConfig from '../../config/papaparse';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Welcome.css';
 
 class Welcome extends Component {
     handleUpload(evt) {
@@ -10,9 +12,14 @@ class Welcome extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Mountainr</h1>
-                <input type="file" id="csv-file" accept=".csv" name="file" onChange={this.handleUpload.bind(this)}/>
+            <div className="container-fluid welcome__background">
+                <h1 className="welcome__title text-center">Mountainr</h1>
+                <div className="row">
+                    <div className="col text-center">
+                        <label htmlFor="csv-file" className="welcome__uploader__button">Upload CSV</label>
+                        <input type="file" className="welcome__uploader" id="csv-file" accept=".csv" name="csv-file" onChange={this.handleUpload.bind(this)}/>
+                    </div>
+                </div>
             </div>
         )
     }
