@@ -1,4 +1,7 @@
-var papaConfig = {
+import Store from '../Store';
+import { initializeData } from '../actions/resortsActions';
+
+const papaConfig = {
 	delimiter: "",	// auto-detect
 	newline: "",	// auto-detect
 	quoteChar: '"',
@@ -10,8 +13,7 @@ var papaConfig = {
 	comments: false,
 	step: undefined,
 	complete: function(results, file) {
-        //TODO - emit event to add results to the store
-        console.log("Parsing complete:", results, file);
+		Store.dispatch(initializeData(results.data));
     },
 	error: undefined,
 	download: false,
