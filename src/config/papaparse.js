@@ -1,5 +1,6 @@
 import Store from '../Store';
 import { initializeData } from '../actions/resortsActions';
+import history from '../history.js';
 
 const papaConfig = {
 	delimiter: "",	// auto-detect
@@ -14,6 +15,7 @@ const papaConfig = {
 	step: undefined,
 	complete: function(results, file) {
 		Store.dispatch(initializeData(results.data));
+		history.push('/listing');
     },
 	error: undefined,
 	download: false,
