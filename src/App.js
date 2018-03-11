@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Router, Route } from 'react-router-dom';
-import history from './history.js';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Welcome from './components/screens/Welcome';
 import Listing from './components/screens/Listing';
 import Details from './components/screens/Details';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   render() {
     return (
-      <Router history={history}>
+      <Router>
         <div>
           <Route exact path="/" component={ Welcome }/>
           <Route path="/listing" component={ Listing }/>

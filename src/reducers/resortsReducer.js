@@ -3,6 +3,10 @@ const resortsReducer = (state, action) => {
         case 'INITIALIZE_DATA': {
             return { ...state, resorts: action.payload }
         }
+
+        default : {
+            return;
+        }
     }
 }
 

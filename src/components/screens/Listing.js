@@ -35,6 +35,6 @@ const mapStateToProps = store => {
     return {
       resorts: store.resorts
     }
-  }
+}
 
 export default connect(mapStateToProps)(Listing);
