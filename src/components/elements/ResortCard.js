@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import "./ResortCard.css";
 
-class ResortCard extends Component {
+class ResortCard extends Component {    
+    goToDetails() {
+        this.props.history.push('/details/' + this.props.data.name);
+    }
+    
     render() {
         return (
             <div className="resort-card">
@@ -15,7 +19,7 @@ class ResortCard extends Component {
                         <span>{this.props.data.acres} acres</span>
                         <span>Terrain park?{this.props.data.hasTerrainPark}</span>
                     </div>
-                    <p className="resort-card__action">Explore</p>
+                    <p className="resort-card__action" onClick={this.goToDetails.bind(this)}>Explore</p>
                 </div>
                 <div className="resort-card__logo-container text-center">
                     <img className="resort-card__logo" src={this.props.data.logoUrl} alt={this.props.data.name} />
