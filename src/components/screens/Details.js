@@ -9,7 +9,38 @@ class Details extends Component {
 
         return (
             <div>
-                <h1>{this.props.match.params.id}</h1>
+                <div className="container">
+                    <img src={resortData.logoUrl} />
+                    <h1>{this.props.match.params.id}</h1>
+                    <div>
+                        <span>{resortData.lifts} lifts</span>
+                        <span>{resortData.trails} trails</span>
+                        <span>{resortData.acres} acres</span>
+                        <span>Terrain park?{resortData.hasTerrainPark}</span>
+                    </div>
+                </div>
+                <div className="container-fluid">
+                    <map></map>
+                </div>
+                <div className="container">
+                    <div className="row">
+                        <div className="detail__action col">
+                            <a href="#">Directions</a>
+                        </div>
+                        <div className="detail__action col">
+                            <a href={resortData.trailMapUrl} target="_blank" rel="noopener">Trail map</a>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col">
+                            <h3>Contact</h3>
+                            <p>{resortData.address}</p>
+                            <p>{resortData.phone}</p>
+                            <p>{resortData.hours}</p>
+                            <a href={resortData.url} target="_blank" rel="noopener">Visit site</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
@@ -22,4 +53,3 @@ const mapStateToProps = store => {
 }
 
 export default connect(mapStateToProps)(Details);
-
