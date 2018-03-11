@@ -4,6 +4,7 @@ import PapaParse from 'papaparse';
 import { initializeData } from '../../actions/resortsActions';
 import headersConfig from '../../config/headersConfig';
 import './Welcome.css';
+import logo from '../../images/logo.png';
 
 class Welcome extends Component {
     handleUpload(evt) {
@@ -41,7 +42,7 @@ class Welcome extends Component {
     render() {
         return (
             <div className="container-fluid welcome__background">
-                <h1 className="welcome__title text-center">Mountainr</h1>
+                <h1 className="welcome__title text-center"><img src={logo}/></h1>
                 <div className="row">
                     <div className="col text-center">
                         <label htmlFor="csv-file" className="welcome__uploader__button">Upload CSV</label>

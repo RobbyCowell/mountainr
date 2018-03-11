@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Details.css';
+import directionsImage from '../../images/Directions.png';
+import trailImage from '../../images/Trail Map.png';
 
 class Details extends Component {
     render() {
@@ -34,20 +36,26 @@ class Details extends Component {
                 <iframe className="details__map" frameBorder="0" src={mapSrc} allowFullScreen></iframe>
                 </div>
                 <div className="container">
-                    <div className="row">
-                        <div className="text-center col">
-                            <a className="details__action" href={directionsSrc} target="_blank" rel="noopener">Directions</a>
+                    <div className="details__action__row row justify-content-sm-center">
+                        <div className="text-center col-4">
+                            <a className="details__action" href={directionsSrc} target="_blank" rel="noopener">
+                                <img className="details__action__image" src={directionsImage} />
+                                Directions
+                            </a>
                         </div>
-                        <div className="text-center col">
-                            <a className="details__action" href={resortData.trailMapUrl} target="_blank" rel="noopener">Trail map</a>
+                        <div className="text-center col-4">
+                            <a className="details__action" href={resortData.trailMapUrl} target="_blank" rel="noopener">
+                                <img className="details__action__image" src={trailImage} />
+                                Trail map
+                            </a>
                         </div>
                     </div>
-                    <div className="row">
+                    <div className="details__contact__row row">
                         <div className="col">
-                            <h3>Contact</h3>
-                            <p>{resortData.address}</p>
-                            <p>{resortData.phone}</p>
-                            <p>{resortData.hours}</p>
+                            <h3 className="details__contact__title">Contact</h3>
+                            <p className="details__contact__info">{resortData.address}</p>
+                            <p className="details__contact__info">{resortData.phone}</p>
+                            <p className="details__contact__info">{resortData.hours}</p>
                             <a href={resortData.url} target="_blank" rel="noopener">Visit site</a>
                         </div>
                     </div>
