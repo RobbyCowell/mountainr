@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ResortCard from '../elements/ResortCard';
 
-// @connect((store) => { return { resorts: store.resorts }; })
 class Listing extends Component {
     render() {
         let resortList = [];
@@ -21,10 +20,10 @@ class Listing extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col text-center">
-                        <h1>Listing</h1>
+                        <h1>Resorts</h1>
                     </div>
                 </div>
-                <div className="row">
+                <div>
                     {resortList}
                 </div>             
             </div>
