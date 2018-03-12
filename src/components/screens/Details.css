@@ -1,8 +1,13 @@
 .details__logo {
     max-width: 200px;
-    max-height: 100px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    max-height: 80px;
+}
+
+.details__edit-button {
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    color: #828282;
 }
 
 .details__name {
@@ -62,6 +67,7 @@
 
 .details__action__image {
     margin-bottom: 20px;
+    width: 50px;
 }
 
 .details__contact__row {

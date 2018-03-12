@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Details.css';
+import back from '../../images/Back.png';
 import directionsImage from '../../images/Directions.png';
 import trailImage from '../../images/Trail Map.png';
 
 class Details extends Component {
+    goBack(){
+        this.props.history.goBack();
+    }
+
     render() {
         let resortData = this.props.resorts.find(resort => resort.name === this.props.match.params.id);
 
@@ -23,7 +28,13 @@ class Details extends Component {
         return (
             <div>
                 <div className="text-center container">
-                    <img className="details__logo" src={resortData.logoUrl} />
+                    <div className="row">
+                        <div className="listing__header col text-center">
+                            <img onClick={this.goBack.bind(this)} className="back-button" src={back} />
+                            <img className="details__logo" src={resortData.logoUrl} />
+                            <p className="details__edit-button">Edit</p>
+                        </div>
+                    </div>
                     <h1 className="details__name">{this.props.match.params.id}</h1>
                     <div className="details__stats">
                         <span><b>{resortData.lifts}</b> lifts</span>

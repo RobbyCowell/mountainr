@@ -11,7 +11,7 @@ class ResortCard extends Component {
         return (
             <div className="resort-card">
                 <div className="resort-card__info">
-                    <h3>{this.props.data.name}</h3>
+                    <h3 className="resort-card__title">{this.props.data.name}</h3>
                     <div className="resort-card__stats">
                         <span>{this.props.data.lifts} lifts</span>
                         <span>{this.props.data.trails} trails</span>

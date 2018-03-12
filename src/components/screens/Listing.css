@@ -1,0 +1,30 @@
+.listing__header {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listing__title {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    color: #828282;
+}
+
+.back-button {
+    cursor: pointer;
+    width: 35px;
+}
+
+.search-button {
+    cursor: pointer;
+    margin-right: 30px;
+    width: 35px;
+}
+
+.filter-button {
+    cursor: pointer;
+    width: 35px;
+}

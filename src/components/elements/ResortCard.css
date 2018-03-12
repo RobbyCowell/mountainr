@@ -16,6 +16,12 @@
     justify-content: space-between;
 }
 
+.resort-card__title {
+    font-family: 'Roboto', sans-serif;
+    color: #828282;
+    text-transform: uppercase;
+}
+
 .resort-card__stats {
     color: #828282;
 }
