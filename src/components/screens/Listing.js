@@ -54,12 +54,23 @@ class Listing extends Component {
                 <div className="row">
                     <div className="listing__header col text-center">
                         <div>
-                            <img onClick={this.goBack.bind(this)} className="back-button" src={back} alt="back" />
+                            <img onClick={this.goBack.bind(this)}
+                                className="back-button"
+                                src={ back }
+                                alt="back" />
                         </div>
                         <h1 className="listing__title">Resorts</h1>
                         <div>
-                            <img onClick={this.toggleSearch.bind(this)} className="search-button" src={search} alt="search"/>
-                            <img onClick={this.filterResorts.bind(this)} className="filter-button" src={filter} alt="filter"/>
+                            <img onClick={this.toggleSearch.bind(this)}
+                                className="search-button"
+                                src={ search }
+                                alt="search" 
+                            />
+                            <img onClick={this.filterResorts.bind(this)}
+                                className="filter-button"
+                                src={ filter }
+                                alt="filter" 
+                            />
                         </div>
                     </div>
                 </div>
