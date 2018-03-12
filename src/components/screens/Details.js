@@ -30,8 +30,8 @@ class Details extends Component {
                 <div className="text-center container">
                     <div className="row">
                         <div className="listing__header col text-center">
-                            <img onClick={this.goBack.bind(this)} className="back-button" src={back} />
-                            <img className="details__logo" src={resortData.logoUrl} />
+                            <img onClick={this.goBack.bind(this)} className="back-button" src={back} alt="back"/>
+                            <img className="details__logo" src={resortData.logoUrl} alt="resort logo"/>
                             <p className="details__edit-button">Edit</p>
                         </div>
                     </div>
@@ -44,19 +44,19 @@ class Details extends Component {
                     </div>
                 </div>
                 <div className="details__map-container container-fluid">
-                <iframe className="details__map" frameBorder="0" src={mapSrc} allowFullScreen></iframe>
+                <iframe className="details__map" frameBorder="0" src={mapSrc} allowFullScreen title="resort location"></iframe>
                 </div>
                 <div className="container">
                     <div className="details__action__row row justify-content-sm-center">
                         <div className="text-center col-4">
                             <a className="details__action" href={directionsSrc} target="_blank" rel="noopener">
-                                <img className="details__action__image" src={directionsImage} />
+                                <img className="details__action__image" src={directionsImage} alt="directions"/>
                                 Directions
                             </a>
                         </div>
                         <div className="text-center col-4">
                             <a className="details__action" href={resortData.trailMapUrl} target="_blank" rel="noopener">
-                                <img className="details__action__image" src={trailImage} />
+                                <img className="details__action__image" src={trailImage} alt="trail map" />
                                 Trail map
                             </a>
                         </div>

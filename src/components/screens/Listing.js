@@ -7,24 +7,44 @@ import search from '../../images/Search.png';
 import filter from '../../images/Filter.png';
 
 class Listing extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { resorts: this.props.resorts, searchHidden: true }
+    }
 
-    goBack(){
+    goBack () {
         this.props.history.goBack();
     }
 
-    searchResorts() {}
+    toggleSearch () {
+        this.setState((prevState) => ({
+            searchHidden: !prevState.searchHidden
+        }));
+    }
 
-    filterResorts() {}
+    searchResorts (event) {
+        let searchTerm = event.target.value;
+
+        this.setState((prevState) => ({
+            resorts: this.props.resorts.filter(resort => {
+                return resort.name.toLowerCase().includes(searchTerm.toLowerCase());
+            })
+        }));
+    }
+
+    filterResorts () {
+
+    }
 
     render() {
         let resortList = [];
 
-        for (var i = 0; i < this.props.resorts.length; i++) {
+        for (var i = 0; i < this.state.resorts.length; i++) {
             resortList.push(
                 <ResortCard
                     key={i}
                     history={this.props.history}
-                    data={this.props.resorts[i]}
+                    data={this.state.resorts[i]}
                 />
             );
         }
@@ -34,13 +54,22 @@ class Listing extends Component {
                 <div className="row">
                     <div className="listing__header col text-center">
                         <div>
-                            <img onClick={this.goBack.bind(this)} className="back-button" src={back} />
+                            <img onClick={this.goBack.bind(this)} className="back-button" src={back} alt="back" />
                         </div>
                         <h1 className="listing__title">Resorts</h1>
                         <div>
-                            <img onClick={this.searchResorts.bind(this)} className="search-button" src={search} />
-                            <img onClick={this.filterResorts.bind(this)} className="filter-button" src={filter} />
+                            <img onClick={this.toggleSearch.bind(this)} className="search-button" src={search} alt="search"/>
+                            <img onClick={this.filterResorts.bind(this)} className="filter-button" src={filter} alt="filter"/>
                         </div>
+                    </div>
+                </div>
+                <div className={this.state.searchHidden ? 'hidden' : ''}>
+                    <div className="listing__search">
+                        <input
+                            ref={searchInput => searchInput && searchInput.focus()}
+                            value={this.state.searchTerm}
+                            onChange={this.searchResorts.bind(this)}>
+                        </input>
                     </div>
                 </div>
                 <div>

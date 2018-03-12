@@ -42,7 +42,7 @@ class Welcome extends Component {
     render() {
         return (
             <div className="container-fluid welcome__background">
-                <h1 className="welcome__title text-center"><img src={logo}/></h1>
+                <h1 className="welcome__title text-center"><img src={logo} alt="Mountainr logo"/></h1>
                 <div className="row">
                     <div className="col text-center">
                         <label htmlFor="csv-file" className="welcome__uploader__button">Upload CSV</label>
