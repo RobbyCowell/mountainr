@@ -6,6 +6,11 @@ import directionsImage from '../../images/Directions.png';
 import trailImage from '../../images/Trail Map.png';
 
 class Details extends Component {
+    constructor(props) {
+        super(props);
+        this.goBack = this.goBack.bind(this);
+        this.edit = this.edit.bind(this);
+    }
     goBack() {
         this.props.history.goBack();
     }
@@ -34,9 +39,9 @@ class Details extends Component {
                 <div className="text-center container">
                     <div className="row">
                         <div className="details__header col text-center">
-                            <img onClick={this.goBack.bind(this)} className="back-button" src={back} alt="back"/>
+                            <img onClick={this.goBack} className="back-button" src={back} alt="back"/>
                             <img className="details__logo" src={resortData.logoUrl} alt="resort logo"/>
-                            <p onClick={this.edit.bind(this)} className="details__edit-button">Edit</p>
+                            <p onClick={this.edit} className="details__edit-button">Edit</p>
                         </div>
                     </div>
                     <h1 className="details__name">{this.props.match.params.id}</h1>

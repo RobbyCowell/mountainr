@@ -10,14 +10,17 @@ import add from '../../images/Add.png';
 class Listing extends Component {
     constructor(props) {
         super(props);
+        this.goBack = this.goBack.bind(this);
+        this.searchResorts = this.searchResorts.bind(this);
+        this.goToAddResort = this.goToAddResort.bind(this);
         this.state = { resorts: this.props.resorts }
     }
 
-    goBack () {
+    goBack() {
         this.props.history.goBack();
     }
 
-    searchResorts (event) {
+    searchResorts(event) {
         let searchTerm = event.target.value;
 
         this.setState(() => ({
@@ -27,7 +30,7 @@ class Listing extends Component {
         }));
     }
 
-    goToAddResort () {
+    goToAddResort() {
         this.props.history.push('/add');
     }
 
@@ -48,7 +51,7 @@ class Listing extends Component {
             <div className="container">
                 <div className="row listing__header">
                     <div className="col">
-                        <img onClick={this.goBack.bind(this)}
+                        <img onClick={this.goBack}
                             className="back-button"
                             src={ back }
                             alt="back" />
@@ -62,7 +65,7 @@ class Listing extends Component {
                                 className="search-bar"
                                 placeholder="Search resorts"
                                 value={this.state.searchTerm}
-                                onChange={this.searchResorts.bind(this)}>
+                                onChange={this.searchResorts}>
                             </input>
                         </div>
                     </div>
@@ -72,9 +75,8 @@ class Listing extends Component {
                 </div>
 
                 <div className="listing__add-button">
-                    <img src={add} alt="add resort" onClick={this.goToAddResort.bind(this)}/>
+                    <img src={add} alt="add resort" onClick={this.goToAddResort}/>
                 </div>
-
             </div>
         )
     }

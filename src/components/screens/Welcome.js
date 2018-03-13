@@ -7,6 +7,11 @@ import './Welcome.css';
 import logo from '../../images/logo.png';
 
 class Welcome extends Component {
+    constructor(props) {
+        super(props);
+        this.handleUpload = this.handleUpload.bind(this);
+    }
+    
     handleUpload(evt) {
         //Store file
         let file = evt.target.files[0];
@@ -51,7 +56,7 @@ class Welcome extends Component {
                             id="csv-file"
                             accept=".csv"
                             name="csv-file"
-                            onChange={this.handleUpload.bind(this)}/>
+                            onChange={this.handleUpload}/>
                     </div>
                 </div>
             </div>

@@ -9,31 +9,33 @@ class EditResort extends Component {
     constructor(props) {
         super(props);
         this.handleChange = this.handleChange.bind(this);
+        this.goBack = this.goBack.bind(this);
+        this.submitForm = this.submitForm.bind(this);
         this.state = this.props.resorts.find(resort => resort.name === this.props.match.params.id);
     }
 
-    goBack () {
+    goBack() {
         this.props.history.goBack();
     }
 
-    handleChange (event) {
+    handleChange(event) {
         this.setState({
             [event.target.id]: event.target.value
         })
     }
     
-    submitForm (event) {
+    submitForm(event) {
         this.props.dispatch(editResort(this.state));
         event.preventDefault();
         this.props.history.goBack();
     }
     
-    render () {
+    render() {
         return (
             <div className="container">
                 <div className="row listing__header">
                     <div className="col-sm-2">
-                        <img className="back-button" src={back} alt="back" onClick={this.goBack.bind(this)} />
+                        <img className="back-button" src={back} alt="back" onClick={this.goBack} />
                     </div>
                     <div className="col-sm-8">
                         <h2 className="listing__title">Edit resort</h2>
@@ -41,7 +43,7 @@ class EditResort extends Component {
                 </div>
                 <div className="row justify-content-md-center">
                     <div className="col col-sm-6">
-                        <form onSubmit={this.submitForm.bind(this)}>
+                        <form onSubmit={this.submitForm}>
                             <div className="form-group">
                                 <label htmlFor="name">Resort name</label>
                                 <input
