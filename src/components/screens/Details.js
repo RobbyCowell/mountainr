@@ -6,8 +6,12 @@ import directionsImage from '../../images/Directions.png';
 import trailImage from '../../images/Trail Map.png';
 
 class Details extends Component {
-    goBack(){
+    goBack() {
         this.props.history.goBack();
+    }
+
+    edit() {
+        this.props.history.push('/edit/' + this.props.match.params.id);
     }
 
     render() {
@@ -32,7 +36,7 @@ class Details extends Component {
                         <div className="details__header col text-center">
                             <img onClick={this.goBack.bind(this)} className="back-button" src={back} alt="back"/>
                             <img className="details__logo" src={resortData.logoUrl} alt="resort logo"/>
-                            <p className="details__edit-button">Edit</p>
+                            <p onClick={this.edit.bind(this)} className="details__edit-button">Edit</p>
                         </div>
                     </div>
                     <h1 className="details__name">{this.props.match.params.id}</h1>

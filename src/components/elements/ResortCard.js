@@ -8,6 +8,11 @@ class ResortCard extends Component {
     }
     
     render() {
+        let terrainPark = "";
+        if (this.props.data.hasTerrainPark === 'true') {
+            terrainPark = <span>Terrain Park</span>
+        }
+
         return (
             <div className="resort-card">
                 <div className="resort-card__info">
@@ -16,7 +21,7 @@ class ResortCard extends Component {
                         <span>{this.props.data.lifts} lifts</span>
                         <span>{this.props.data.trails} trails</span>
                         <span>{this.props.data.acres} acres</span>
-                        <span>Terrain park?{this.props.data.hasTerrainPark}</span>
+                        {terrainPark}
                     </div>
                     <p className="resort-card__action" onClick={this.goToDetails.bind(this)}>Explore</p>
                 </div>

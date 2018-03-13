@@ -12,10 +12,14 @@ const resortsReducer = (state, action) => {
         }
 
         case 'EDIT_RESORT': {
-            return {
-                ...state,
-                resorts: [...state.resorts, action.payload]
-            }
+            const updatedResorts = state.resorts.map(resort => {
+                if (resort.name === action.payload.name) {
+                    return {...resort, ...action.payload}
+                }
+                return resort;
+            });
+
+            return { ...state, resorts: updatedResorts };
         }
 
         default : {

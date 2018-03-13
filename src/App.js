@@ -4,6 +4,7 @@ import Welcome from './components/screens/Welcome';
 import Listing from './components/screens/Listing';
 import Details from './components/screens/Details';
 import AddResort from './components/screens/AddResort';
+import EditResort from './components/screens/EditResort';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
           <Route path="/listing" component={ Listing }/>
           <Route path="/details/:id" component={ Details }/>
           <Route path="/add" component={ AddResort }/>
+          <Route path="/edit/:id" component={ EditResort }/>
         </div>
       </Router>
     )
