@@ -44,3 +44,25 @@
     cursor: pointer;
     width: 35px;
 }
+
+.listing__add-button {
+    cursor: pointer;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 75px;
+    height: 75px;
+    -webkit-filter: drop-shadow(3px 3px 10px #0000004d);
+    filter: drop-shadow(3px 3px 10px #0000004d);
+    transition: 0.2s;
+}
+
+.listing__add-button:hover {
+    -webkit-filter: drop-shadow(5px 5px 15px #0000004d);
+    filter: drop-shadow(5px 5px 15px #0000004d);
+    transition: 0.2s;
+}
+
+.listing__add-button img {
+    max-width: 100%;
+}

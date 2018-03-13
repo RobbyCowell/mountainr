@@ -5,11 +5,12 @@ import './Listing.css';
 import back from '../../images/Back.png';
 import search from '../../images/Search.png';
 import filter from '../../images/Filter.png';
+import add from '../../images/Add.png';
 
 class Listing extends Component {
     constructor(props) {
         super(props);
-        this.state = { resorts: this.props.resorts, searchHidden: true }
+        this.state = { resorts: this.props.resorts }
     }
 
     goBack () {
@@ -24,6 +25,10 @@ class Listing extends Component {
                 return resort.name.toLowerCase().includes(searchTerm.toLowerCase());
             })
         }));
+    }
+
+    goToAddResort () {
+        this.props.history.push('/add');
     }
 
     render() {
@@ -64,7 +69,12 @@ class Listing extends Component {
                 </div>
                 <div>
                     {resortList}
-                </div>             
+                </div>
+
+                <div className="listing__add-button">
+                    <img src={add} alt="add resort" onClick={this.goToAddResort.bind(this)}/>
+                </div>
+
             </div>
         )
     }

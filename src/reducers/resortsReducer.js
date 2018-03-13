@@ -4,6 +4,20 @@ const resortsReducer = (state, action) => {
             return { ...state, resorts: action.payload }
         }
 
+        case 'ADD_RESORT': {
+            return {
+                ...state,
+                resorts: [...state.resorts, action.payload]
+            }
+        }
+
+        case 'EDIT_RESORT': {
+            return {
+                ...state,
+                resorts: [...state.resorts, action.payload]
+            }
+        }
+
         default : {
             return;
         }
