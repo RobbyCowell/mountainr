@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addResort } from '../../actions/resortsActions';
+import back from '../../images/Back.png';
+import './Listing.css';
+import './Add.css';
 
 class AddResort extends Component {
     constructor(props) {
         super(props);
         this.handleChange = this.handleChange.bind(this);
-        // this.state = {
-        //     name: '',
-        //     url: '',
-        //     trailMapUrl: '',
-        //     logoUrl: '',
-        //     address: '',
-        //     phone: '',
-        //     hours: '',
-        //     lifts: '',
-        //     trails: '',
-        //     acres: '',
-        //     hasTerrainPark: false
-        // }
+        this.state = {
+            name: '',
+            url: '',
+            trailMapUrl: '',
+            logoUrl: '',
+            address: '',
+            phone: '',
+            hours: '',
+            lifts: '',
+            trails: '',
+            acres: '',
+            hasTerrainPark: false
+        }
     }
 
     goBack () {
@@ -39,111 +42,111 @@ class AddResort extends Component {
     render () {
         return (
             <div className="container">
-                <form onSubmit={this.submitForm.bind(this)}>
-                    <div className="form-group">
-                        <label htmlFor="name">Resort name</label>
-                        <input
-                            value={this.state.name}
-                            onChange={this.handleChange}
-                            id="name"
-                            className="form-control"
-                            placeholder="Resort name" />
+                <div className="row listing__header">
+                    <div className="col-sm-2">
+                        <img className="back-button" src={back} alt="back" onClick={this.goBack.bind(this)} />
                     </div>
-
-                    <div className="form-group">
-                        <label htmlFor="name">Resort URL</label>
-                        <input
-                            value={this.state.url}
-                            onChange={this.handleChange}
-                            id="url"
-                            className="form-control"
-                            placeholder="Resort URL" />
+                    <div className="col-sm-8">
+                        <h2 className="listing__title">Add resort</h2>
                     </div>
+                </div>
+                <div className="row justify-content-md-center">
+                    <div className="col col-sm-6">
+                        <form onSubmit={this.submitForm.bind(this)}>
+                            <div className="form-group">
+                                <label htmlFor="name">Resort name</label>
+                                <input
+                                    value={this.state.name}
+                                    onChange={this.handleChange}
+                                    id="name"
+                                    className="form-control" />
+                            </div>
 
-                    <div className="form-group">
-                        <label htmlFor="name">Trail Map URL</label>
-                        <input
-                            value={this.state.trailMapUrl}
-                            onChange={this.handleChange}
-                            id="trailMapUrl"
-                            className="form-control"
-                            placeholder="Trail Map URL" />
+                            <div className="form-group">
+                                <label htmlFor="name">Resort URL</label>
+                                <input
+                                    value={this.state.url}
+                                    onChange={this.handleChange}
+                                    id="url"
+                                    className="form-control" />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="name">Trail Map URL</label>
+                                <input
+                                    value={this.state.trailMapUrl}
+                                    onChange={this.handleChange}
+                                    id="trailMapUrl"
+                                    className="form-control" />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="name">Logo URL</label>
+                                <input
+                                    value={this.state.logoUrl}
+                                    onChange={this.handleChange}
+                                    id="logoUrl"
+                                    className="form-control" />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="name">Resort Address</label>
+                                <input
+                                    value={this.state.address}
+                                    onChange={this.handleChange}
+                                    id="address"
+                                    className="form-control" />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="name">Resort Phone no.</label>
+                                <input
+                                    value={this.state.phone}
+                                    onChange={this.handleChange}
+                                    id="phone"
+                                    className="form-control" />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="name">Resort hours</label>
+                                <input
+                                    value={this.state.hours}
+                                    onChange={this.handleChange}
+                                    id="hours"
+                                    className="form-control" />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="name">Resort lifts</label>
+                                <input
+                                    value={this.state.lifts}
+                                    onChange={this.handleChange}
+                                    id="lifts"
+                                    className="form-control" />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="name">Resort trials</label>
+                                <input
+                                    value={this.state.trails}
+                                    onChange={this.handleChange}
+                                    id="trails"
+                                    className="form-control" />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="name">Resort acres</label>
+                                <input
+                                    value={this.state.acres}
+                                    onChange={this.handleChange}
+                                    id="acres"
+                                    className="form-control" />
+                            </div>
+
+                            <input className="add__button" type="submit" value="Add resort" />
+                        </form>
                     </div>
-
-                    <div className="form-group">
-                        <label htmlFor="name">Logo URL</label>
-                        <input
-                            value={this.state.logoUrl}
-                            onChange={this.handleChange}
-                            id="logoUrl"
-                            className="form-control"
-                            placeholder="Logo URL" />
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="name">Resort Address</label>
-                        <input
-                            value={this.state.address}
-                            onChange={this.handleChange}
-                            id="address"
-                            className="form-control"
-                            placeholder="Resort address" />
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="name">Resort Phone no.</label>
-                        <input
-                            value={this.state.phone}
-                            onChange={this.handleChange}
-                            id="phone"
-                            className="form-control"
-                            placeholder="Resort phone no." />
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="name">Resort hours</label>
-                        <input
-                            value={this.state.hours}
-                            onChange={this.handleChange}
-                            id="hours"
-                            className="form-control"
-                            placeholder="Resort hours" />
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="name">Resort lifts</label>
-                        <input
-                            value={this.state.lifts}
-                            onChange={this.handleChange}
-                            id="lifts"
-                            className="form-control"
-                            placeholder="Resort lifts" />
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="name">Resort trials</label>
-                        <input
-                            value={this.state.trails}
-                            onChange={this.handleChange}
-                            id="trails"
-                            className="form-control"
-                            placeholder="Resort trails" />
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="name">Resort acres</label>
-                        <input
-                            value={this.state.acres}
-                            onChange={this.handleChange}
-                            id="acres"
-                            className="form-control"
-                            placeholder="Resort acres" />
-                    </div>
-
-                    <input type="submit" value="Add resort" />
-                </form>
-
-                <p onClick={this.goBack.bind(this)}>GO BACK</p>
+                </div>
             </div>
         )
     }
