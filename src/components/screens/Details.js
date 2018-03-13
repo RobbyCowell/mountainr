@@ -29,7 +29,7 @@ class Details extends Component {
             <div>
                 <div className="text-center container">
                     <div className="row">
-                        <div className="listing__header col text-center">
+                        <div className="details__header col text-center">
                             <img onClick={this.goBack.bind(this)} className="back-button" src={back} alt="back"/>
                             <img className="details__logo" src={resortData.logoUrl} alt="resort logo"/>
                             <p className="details__edit-button">Edit</p>

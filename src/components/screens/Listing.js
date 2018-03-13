@@ -16,24 +16,14 @@ class Listing extends Component {
         this.props.history.goBack();
     }
 
-    toggleSearch () {
-        this.setState((prevState) => ({
-            searchHidden: !prevState.searchHidden
-        }));
-    }
-
     searchResorts (event) {
         let searchTerm = event.target.value;
 
-        this.setState((prevState) => ({
+        this.setState(() => ({
             resorts: this.props.resorts.filter(resort => {
                 return resort.name.toLowerCase().includes(searchTerm.toLowerCase());
             })
         }));
-    }
-
-    filterResorts () {
-
     }
 
     render() {
@@ -51,36 +41,25 @@ class Listing extends Component {
 
         return (
             <div className="container">
-                <div className="row">
-                    <div className="listing__header col text-center">
-                        <div>
-                            <img onClick={this.goBack.bind(this)}
-                                className="back-button"
-                                src={ back }
-                                alt="back" />
-                        </div>
-                        <h1 className="listing__title">Resorts</h1>
-                        <div>
-                            <img onClick={this.toggleSearch.bind(this)}
-                                className="search-button"
-                                src={ search }
-                                alt="search" 
-                            />
-                            <img onClick={this.filterResorts.bind(this)}
-                                className="filter-button"
-                                src={ filter }
-                                alt="filter" 
-                            />
-                        </div>
+                <div className="row listing__header">
+                    <div className="col">
+                        <img onClick={this.goBack.bind(this)}
+                            className="back-button"
+                            src={ back }
+                            alt="back" />
                     </div>
-                </div>
-                <div className={this.state.searchHidden ? 'hidden' : ''}>
-                    <div className="listing__search">
-                        <input
-                            ref={searchInput => searchInput && searchInput.focus()}
-                            value={this.state.searchTerm}
-                            onChange={this.searchResorts.bind(this)}>
-                        </input>
+                    <div className="col">
+                        <h1 className="listing__title">Resorts</h1>
+                    </div>
+                    <div className="col">
+                        <div className="listing__search">
+                            <input
+                                className="search-bar"
+                                placeholder="Search resorts"
+                                value={this.state.searchTerm}
+                                onChange={this.searchResorts.bind(this)}>
+                            </input>
+                        </div>
                     </div>
                 </div>
                 <div>
