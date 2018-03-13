@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class App extends Component {
   render() {
     return (
-      <Router>
+      <Router basename="/mountainr" >
         <div>
           <Route exact path="/" component={ Welcome }/>
           <Route path="/listing" component={ Listing }/>
