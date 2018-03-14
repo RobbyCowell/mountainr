@@ -50,15 +50,17 @@ class Listing extends Component {
         return (
             <div className="container">
                 <div className="row listing__header">
-                    <div className="col">
+                    <div className="col-2">
                         <img onClick={this.goBack}
                             className="back-button"
                             src={ back }
                             alt="back" />
                     </div>
-                    <div className="col">
+                    <div className="col-8">
                         <h1 className="listing__title">Resorts</h1>
                     </div>
+                </div>
+                <div class="row">
                     <div className="col">
                         <div className="listing__search">
                             <input
@@ -78,6 +80,7 @@ class Listing extends Component {
                     <img src={add} alt="add resort" onClick={this.goToAddResort}/>
                 </div>
             </div>
+
         )
     }
 }

@@ -18,6 +18,10 @@
     padding-top: 50px;
 }
 
+.welcome__title img{
+    max-width: 100%;
+}
+
 .welcome__uploader {
     display: none;
     margin: 0 auto;

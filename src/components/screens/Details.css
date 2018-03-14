@@ -54,9 +54,11 @@
 .details__action {
     display: flex;
     flex-direction: column;
+    max-width: 100%;
+    min-height: 150px;
     width: 150px;
-    height: 150px;
     margin: 0 auto;
+    margin-bottom: 30px;
     align-items: center;
     justify-content: center;
     font-family: 'Roboto', sans-serif;

@@ -44,26 +44,34 @@ class Details extends Component {
                             <p onClick={this.edit} className="details__edit-button">Edit</p>
                         </div>
                     </div>
-                    <h1 className="details__name">{this.props.match.params.id}</h1>
-                    <div className="details__stats">
-                        <span><b>{resortData.lifts}</b> lifts</span>
-                        <span><b>{resortData.trails}</b> trails</span>
-                        <span><b>{resortData.acres}</b> acres</span>
-                        {terrainPark}
+                    <div className="row">
+                        <div class="col">
+                            <h1 className="details__name">{this.props.match.params.id}</h1>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div class="col">
+                            <div className="details__stats">
+                                <span><b>{resortData.lifts}</b> lifts</span>
+                                <span><b>{resortData.trails}</b> trails</span>
+                                <span><b>{resortData.acres}</b> acres</span>
+                                {terrainPark}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="details__map-container container-fluid">
-                <iframe className="details__map" frameBorder="0" src={mapSrc} allowFullScreen title="resort location"></iframe>
+                    <iframe className="details__map" frameBorder="0" src={mapSrc} allowFullScreen title="resort location"></iframe>
                 </div>
                 <div className="container">
                     <div className="details__action__row row justify-content-sm-center">
-                        <div className="text-center col-4">
+                        <div className="text-center col">
                             <a className="details__action" href={directionsSrc} target="_blank" rel="noopener">
                                 <img className="details__action__image" src={directionsImage} alt="directions"/>
                                 Directions
                             </a>
                         </div>
-                        <div className="text-center col-4">
+                        <div className="text-center col">
                             <a className="details__action" href={resortData.trailMapUrl} target="_blank" rel="noopener">
                                 <img className="details__action__image" src={trailImage} alt="trail map" />
                                 Trail map
