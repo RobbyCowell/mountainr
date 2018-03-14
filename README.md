@@ -16,7 +16,7 @@ To install the app, clone this repository and run `npm start` in the root direct
 
 ## Code design
 
-The data handling in the application is written in Redux. While this approach is slightly over-engineered, it demonstrates how the data would flow in a larger application.
+This approach it purposefully over-engineered to demonstrate how the data would flow in a larger application; it has been built as a display of ability. An application built to adhere strictly to the specification in a business context would be a more elegant solution - something I am happy to talk more about.
 
 The `initializeData()` action accepts a JSON or JS object, and so can easily be provided with a JSON server response rather than a CSV file.
 
