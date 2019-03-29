@@ -10,7 +10,7 @@ Mountainr is a web application that accepts a [.CSV file](https://github.com/Rob
 
 You can view, search, add, edit the resorts within the app.
 
-## Intallation and running locally
+## Installation and running locally
 
 To install the app, clone this repository and run `npm start` in the root directory.
 
